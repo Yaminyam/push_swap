@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:50 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/08 13:54:35 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/08 14:28:58 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ typedef struct	s_stack {
 	t_node	*top;
 	t_node	*bottom;
 }				t_stack;
+
+void	ft_stackadd_back(t_stack *lst, int n);
 
 #endif

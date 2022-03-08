@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi2.c                                         :+:      :+:    :+:   */
+/*   ft_stackclear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 15:53:11 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/08 10:46:56 by sikang           ###   ########.fr       */
+/*   Created: 2021/07/14 21:53:47 by sikang            #+#    #+#             */
+/*   Updated: 2022/03/08 14:40:13 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
 #include "push_swap.h"
 
-int	ft_atoi2(const char *str)
+void	ft_stackclear(t_stack *lst)
 {
-	unsigned long long	sum;
-	int					pm;
+	t_list	*node;
 
-	sum = 0;
-	pm = 1;
-	while ((9 <= *str && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '+' || *str == '-')
+	node = lst->top;
+	while (node)
 	{
-		if (*str == '-')
-			pm *= -1;
-		str++;
+		lst->top = node->next;
+		free(node);
+		node = lst->top;
 	}
-	while ('0' <= *str && *str <= '9')
-	{
-		sum *= 10;
-		sum += *str - '0';
-		str++;
-	}
-	if (sum > INT_MAX - 1 && pm == -1)
-		return (-1);
-	if (sum > INT_MAX && pm == 1)
-		return (-1);
-	return (pm * sum);
+	lst->bottom = 0;
+	lst->size = 0;
 }

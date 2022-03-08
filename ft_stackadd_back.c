@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstnew.c                                       :+:      :+:    :+:   */
+/*   ft_stackadd_back.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 20:36:20 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/08 14:13:45 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/08 14:29:36 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_stack_add_back(t_stack **lst, t_node *new)
+void	ft_stackadd_back(t_stack *lst, int	n)
 {
-	t_node *last;
+	t_node	*last;
+	t_node	*new;
 
-	if ((*lst)->bottom == 0) {
-		*lst = new;
+	new = (t_node *)malloc(sizeof(t_node));
+	new->content = n;
+	if (lst->size == 0) {
+		lst->bottom = new;
+		lst->top = new;
+		lst->size++;
 		return;
 	}
-	last = ft_lstlast(*lst);
+	last = lst->bottom;
 	last->next = new;
+	new->prev = last;
+	lst->bottom = new;
+	lst->size++;
 }
