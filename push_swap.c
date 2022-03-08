@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:25 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/08 14:46:59 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/08 14:56:16 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,32 @@ int	check_number(char *str)
 	return (1);
 }
 
+int		check_duplicate(t_stack *stack, int n)
+{
+	t_node	*node;
+
+	node = stack->top;
+	while (node)
+	{
+		if (node->content == n)
+			return (0);
+		node = node->next;
+	}
+	return (1);
+}
+
 void	init_stack(t_stack *stack_a, t_stack *stack_b, char **argv)
 {
+	int	n;
+
 	while(*argv)
 	{
 		if (check_number(*argv))
-			ft_stackadd_back(&stack_a, ft_atoi(*argv));
+		{
+			n = ft_atoi(*argv);
+			if (check_duplicate(stack_a, n))
+				ft_stackadd_back(stack_a, n);
+		}
 		else
 		{
 			ft_stackclear(stack_a);
