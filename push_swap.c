@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:25 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/08 14:56:16 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/08 15:23:32 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,12 @@ int	main(int argc, char **argv)
 
 	stack_a = (t_stack *)malloc(sizeof(t_stack));
 	stack_b = (t_stack *)malloc(sizeof(t_stack));
+	stack_a->size = 0;
+	stack_a->top = NULL;
+	stack_a->bottom = NULL;
+	stack_b->size = 0;
+	stack_b->top = NULL;
+	stack_b->bottom = NULL;
 	init_stack(stack_a, stack_b, argv);
 
 	return (0);
