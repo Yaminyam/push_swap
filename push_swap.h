@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:50 by sikang            #+#    #+#             */
-/*   Updated: 2022/02/14 15:34:55 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/08 13:54:35 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,17 @@
 # include <unistd.h>
 
 # include "./libft/libft.h"
+
+typedef struct	s_node {
+	int		*content;
+	struct	s_node *next;
+	struct	s_nodd *prev;
+}				t_node;
+
+typedef struct	s_stack {
+	int		size;
+	t_node	*top;
+	t_node	*bottom;
+}				t_stack;
 
 #endif

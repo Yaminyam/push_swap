@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoll.c                                         :+:      :+:    :+:   */
+/*   ft_atoi2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:53:11 by sikang            #+#    #+#             */
-/*   Updated: 2022/02/14 15:57:15 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/08 10:46:56 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 #include "push_swap.h"
 
-long long	ft_atoll(const char *str)
+int	ft_atoi2(const char *str)
 {
 	unsigned long long	sum;
 	int					pm;
@@ -34,9 +34,9 @@ long long	ft_atoll(const char *str)
 		sum += *str - '0';
 		str++;
 	}
-	if (sum > LLONG_MAX - 1 && pm == -1)
-		return (0);
-	if (sum > LLONG_MAX && pm == 1)
+	if (sum > INT_MAX - 1 && pm == -1)
+		return (-1);
+	if (sum > INT_MAX && pm == 1)
 		return (-1);
 	return (pm * sum);
 }
