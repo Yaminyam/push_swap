@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:14:49 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/08 15:43:04 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/08 16:15:28 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,18 @@ void	ft_rotate(t_stack *lst)
 
 void	ft_push(t_stack *lst, t_stack *lst2)
 {
-	t_node	*node1;
-	t_node	*node2;
-	t_node	*tmp1;
-	t_node	*tmp2;
+	t_node	*node;
+	t_node	*tmp;
 
-	if (lst->size == 0)
+	if (lst->size < 1)
 		return ;
-	node1 = lst->top;
-	node2 = lst2->top;
-	tmp1 = node1->next;
-	tmp2 = node2->next;
-	node1->next = tmp2;
-	node2->next = tmp1;
-	tmp1->prev = node2;
-	tmp2->prev = node1;
+	node = lst->top;
+	tmp = node->next;
+	node->next = lst2->top;
+	lst2->top = node;
+	tmp->prev = NULL;
+	lst->top = tmp;
+	lst->size--;
 }
 
 void	ft_rev_rotate(t_stack *lst)
