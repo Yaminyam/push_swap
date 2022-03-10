@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:25 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 15:43:57 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 16:51:45 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	push_swap(t_stack *stack_a, t_stack *stack_b, int size)
 	{
 		for (int j = 0; j < size; ++j)
 		{
+			//ft_putnbr_fd(stack_a->top->content, 1);
 			int num = stack_a->top->content;
 			if (((num >> i) & 1) == 1) {
 				ft_putstr_fd("ra\n", 1);
@@ -35,6 +36,7 @@ static void	push_swap(t_stack *stack_a, t_stack *stack_b, int size)
 			}
 		}
 		while (stack_b->size) {
+			//ft_putnbr_fd(stack_b->size, 1);
 			ft_putstr_fd("pa\n", 1);
 			ft_push(stack_b, stack_a);
 		}
@@ -57,6 +59,7 @@ int		main(int argc, char **argv)
 	stack_b->top = NULL;
 	stack_b->bottom = NULL;
 	init_stack(stack_a, argv + 1, input);
+	quick_sort(input, 0, argc - 2);
 	rescale(stack_a, input, argc - 1);
 	push_swap(stack_a, stack_b, argc - 1);
 	return (0);

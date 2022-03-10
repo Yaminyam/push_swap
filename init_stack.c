@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:10:21 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 15:35:09 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 16:22:58 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	init_stack(t_stack *stack_a, char **argv, int *input)
 {
 	while(*argv)
 	{
-		ft_putstr_fd(*argv, 1);
+		//ft_putstr_fd(*argv, 1);
 		if (!check_number(*argv) || !check_duplicate(stack_a, ft_atoi(*argv)))
 			error();
 		ft_stackadd_back(stack_a, ft_atoi(*argv));
