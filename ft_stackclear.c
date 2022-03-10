@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 21:53:47 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/08 14:40:13 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 13:52:49 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_stackclear(t_stack *lst)
 {
-	t_list	*node;
+	t_node	*node;
 
 	node = lst->top;
 	while (node)

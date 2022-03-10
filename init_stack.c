@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:10:21 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 11:38:16 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 13:57:17 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static int	check_duplicate(t_stack *stack, int n)
 	return (1);
 }
 
-void	init_stack(t_stack *stack_a, t_stack *stack_b, char **argv, int *input)
+void	init_stack(t_stack *stack_a, char **argv, int *input)
 {
 	while(*argv)
 	{

@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:25 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 13:00:50 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 14:05:01 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	push_swap(t_stack *stack_a, t_stack *stack_b, int size)
 		for (int j = 0; j < size; ++j)
 		{
 			int num = stack_a->top->content;
-			if ((num >> i) & 1 == 1) ft_rotate(stack_a);
+			if (((num >> i) & 1) == 1) ft_rotate(stack_a);
 			else
 				ft_push(stack_a, stack_b);
 		}
@@ -37,7 +37,6 @@ int		main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	t_node	*node;
 	int		*input;
 
 	stack_a = (t_stack *)malloc(sizeof(t_stack));
@@ -49,7 +48,7 @@ int		main(int argc, char **argv)
 	stack_b->size = 0;
 	stack_b->top = NULL;
 	stack_b->bottom = NULL;
-	init_stack(stack_a, stack_b, argv, input);
+	init_stack(stack_a, argv, input);
 	rescale(stack_a, input, argc - 1);
 	push_swap(stack_a, stack_b, argc - 1);
 	return (0);

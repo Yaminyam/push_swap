@@ -6,24 +6,26 @@
 #    By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/23 01:57:32 by sikang            #+#    #+#              #
-#    Updated: 2022/03/10 13:02:35 by sikang           ###   ########.fr        #
+#    Updated: 2022/03/10 14:47:23 by sikang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+HEADER = push_swap.h
 SRCS = \
-push_swap.c
-ft_stackadd_back.c
-ft_stackclear.c
-init_stack.c
-quick_sort.c
-rescale.c
+push_swap.c \
+ft_stackadd_back.c \
+ft_stackclear.c \
+init_stack.c \
+quick_sort.c \
+rescale.c \
 stack_cmd.c
+LIBS = ./libft/libft.a
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 
-all: $(NAME)
+all: libft $(NAME)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -41,7 +43,7 @@ fclean: clean
 
 re: fclean all
 
-$(NAME): push_swap.o libft
-	$(CC) -o $@ $< -Llibft -lft
+$(NAME): $(OBJS) $(LIBS)
+	$(CC) $(CFLAGS) -o $@ $^
 
 .PHONY: all bonus libft clean fclean re
