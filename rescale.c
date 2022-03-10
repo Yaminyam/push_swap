@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:15:53 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 14:01:34 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 15:45:56 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void	rescale(t_stack *stack, int *input, int n)
 			}
 			i++;
 		}
+		node = node->next;
 	}
 }
