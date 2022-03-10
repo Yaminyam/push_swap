@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:25 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 11:11:48 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 11:21:01 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int	main(int argc, char **argv)
 	stack_b->top = NULL;
 	stack_b->bottom = NULL;
 	init_stack(stack_a, stack_b, argv, input);
+	rescale(stack_a, input, argc - 1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:50 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/08 17:41:56 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 11:34:02 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ void	ft_swap(t_stack *lst);
 void	ft_rotate(t_stack *lst);
 void	ft_push(t_stack *lst, t_stack *lst2);
 void	ft_rev_rotate(t_stack *lst);
+void	quick_sort(int arr[], int left, int right);
 
 #endif

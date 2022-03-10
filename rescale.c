@@ -1,48 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quick_sort.c                                       :+:      :+:    :+:   */
+/*   rescale.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 17:45:17 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 11:37:43 by sikang           ###   ########.fr       */
+/*   Created: 2022/03/10 11:15:53 by sikang            #+#    #+#             */
+/*   Updated: 2022/03/10 11:28:46 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(int *a, int *b)
+void	rescale(t_stack *stack, int *input, int n)
 {
-	*a = *a ^ *b;
-	*b = *a ^ *b;
-	*a = *a ^ *b;
-}
+	t_node	*node;
+	int		i;
 
-void		quick_sort(int arr[], int left, int right)
-{
-	int	L;
-	int	R;
-	int	pivot;
-
-	L = left;
-	R = right;
-	pivot = arr[(left + right) / 2];
-	while (L <= R)
+	i = 0;
+	node = stack->top;
+	while (node)
 	{
-		while (arr[L] < pivot)
-			L++;
-		while (arr[R] > pivot)
-			R--;
-		if (L <= R)
+		while (i < n)
 		{
-			swap(&arr[L], &arr[R]);
-			L++;
-			R--;
+			if (node->content == input[i])
+			{
+				node->content = i;
+				break ;
+			}
+			i++;
 		}
 	}
-	if (left < R)
-		quick_sort(arr, left, R);
-	if (L < right)
-		quick_sort(arr, L, right);
+	return (1);
 }

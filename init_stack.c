@@ -6,20 +6,20 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:10:21 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 11:11:31 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 11:38:16 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
 
-void	error(void)
+static void	error(void)
 {
 	ft_putendl_fd("Error", 2);
 	exit(0);
 }
 
-int		check_number(char *str)
+static int	check_number(char *str)
 {
 	unsigned long long	sum;
 	int					pm;
@@ -48,7 +48,7 @@ int		check_number(char *str)
 	return (1);
 }
 
-int		check_duplicate(t_stack *stack, int n)
+static int	check_duplicate(t_stack *stack, int n)
 {
 	t_node	*node;
 
