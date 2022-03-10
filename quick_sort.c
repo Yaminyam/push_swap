@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:45:17 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 11:37:43 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 17:43:07 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,30 @@ static void	swap(int *a, int *b)
 	*a = *a ^ *b;
 }
 
-void		quick_sort(int arr[], int left, int right)
+void	quick_sort(int arr[], int left, int right)
 {
-	int	L;
-	int	R;
+	int	l;
+	int	r;
 	int	pivot;
 
-	L = left;
-	R = right;
+	l = left;
+	r = right;
 	pivot = arr[(left + right) / 2];
-	while (L <= R)
+	while (l <= r)
 	{
-		while (arr[L] < pivot)
-			L++;
-		while (arr[R] > pivot)
-			R--;
-		if (L <= R)
+		while (arr[l] < pivot)
+			l++;
+		while (arr[r] > pivot)
+			r--;
+		if (l <= r)
 		{
-			swap(&arr[L], &arr[R]);
-			L++;
-			R--;
+			swap(&arr[l], &arr[r]);
+			l++;
+			r--;
 		}
 	}
-	if (left < R)
-		quick_sort(arr, left, R);
-	if (L < right)
-		quick_sort(arr, L, right);
+	if (left < r)
+		quick_sort(arr, left, r);
+	if (l < right)
+		quick_sort(arr, l, right);
 }

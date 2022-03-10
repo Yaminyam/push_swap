@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:10:21 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 16:22:58 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 17:41:24 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ static int	check_number(char *str)
 		pm *= -1;
 	if (ft_strlen(str) > 10)
 		return (0);
-	while (*str) {
+	while (*str)
+	{
 		if (!('0' <= *str && *str <= '9'))
 			return (0);
 		sum *= 10;
@@ -64,9 +65,8 @@ static int	check_duplicate(t_stack *stack, int n)
 
 void	init_stack(t_stack *stack_a, char **argv, int *input)
 {
-	while(*argv)
+	while (*argv)
 	{
-		//ft_putstr_fd(*argv, 1);
 		if (!check_number(*argv) || !check_duplicate(stack_a, ft_atoi(*argv)))
 			error();
 		ft_stackadd_back(stack_a, ft_atoi(*argv));

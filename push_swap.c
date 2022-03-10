@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:25 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 16:51:45 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 17:44:43 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,36 @@
 
 static void	push_swap(t_stack *stack_a, t_stack *stack_b, int size)
 {
-	int max_num;
-	int max_bits;
+	int	max_num;
+	int	max_bits;
+	int	i;
+	int	j;
+	int	num;
 
 	max_num = size - 1;
 	max_bits = 0;
-	while ((max_num >> max_bits) != 0) ++max_bits;
-	for (int i = 0; i < max_bits; ++i)
+	while ((max_num >> max_bits) != 0)
+		++max_bits;
+	i = 0;
+	while (i < max_bits)
 	{
-		for (int j = 0; j < size; ++j)
+		j = 0;
+		while (j < size)
 		{
-			//ft_putnbr_fd(stack_a->top->content, 1);
-			int num = stack_a->top->content;
-			if (((num >> i) & 1) == 1) {
-				ft_putstr_fd("ra\n", 1);
-				ft_rotate(stack_a);
-			}
-			else {
-				ft_putstr_fd("pb\n", 1);
-				ft_push(stack_a, stack_b);
-			}
+			num = stack_a->top->content;
+			if (((num >> i) & 1) == 1)
+				cmd(stack_a, stack_b, "ra");
+			else
+				cmd(stack_a, stack_b, "pb");
+			j++;
 		}
-		while (stack_b->size) {
-			//ft_putnbr_fd(stack_b->size, 1);
-			ft_putstr_fd("pa\n", 1);
-			ft_push(stack_b, stack_a);
-		}
+		while (stack_b->size)
+			cmd(stack_a, stack_b, "pa");
+		i++;
 	}
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;

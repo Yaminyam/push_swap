@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:50 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 13:58:07 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 17:45:31 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 # include "./libft/libft.h"
 
-typedef struct	s_node {
-	int		content;
-	struct	s_node *next;
-	struct	s_node *prev;
+typedef struct s_node {
+	int				content;
+	struct s_node	*next;
+	struct s_node	*prev;
 }				t_node;
 
-typedef struct	s_stack {
+typedef struct s_stack {
 	int		size;
 	t_node	*top;
 	t_node	*bottom;
@@ -39,5 +39,7 @@ void	ft_rev_rotate(t_stack *lst);
 void	quick_sort(int arr[], int left, int right);
 void	rescale(t_stack *stack, int *input, int n);
 void	init_stack(t_stack *stack_a, char **argv, int *input);
+void	cmd(t_stack *stack_a, t_stack *stack_b, char *cmd);
+void	cmd_d(t_stack *stack_a, t_stack *stack_b, char *cmd);
 
 #endif
