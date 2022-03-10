@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:14:49 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/08 16:15:28 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/08 16:18:26 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	ft_push(t_stack *lst, t_stack *lst2)
 	tmp->prev = NULL;
 	lst->top = tmp;
 	lst->size--;
+	lst2->size++;
 }
 
 void	ft_rev_rotate(t_stack *lst)
