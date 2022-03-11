@@ -6,7 +6,7 @@
 #    By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/23 01:57:32 by sikang            #+#    #+#              #
-#    Updated: 2022/03/10 14:47:23 by sikang           ###   ########.fr        #
+#    Updated: 2022/03/10 17:54:01 by sikang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ ft_stackclear.c \
 init_stack.c \
 quick_sort.c \
 rescale.c \
-stack_cmd.c
+stack_cmd.c \
+cmd.c
 LIBS = ./libft/libft.a
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap

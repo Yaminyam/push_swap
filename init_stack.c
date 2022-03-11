@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:10:21 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 17:41:24 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/10 17:51:09 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,7 @@ static int	check_number(char *str)
 		sum += *str - '0';
 		str++;
 	}
-	if (sum > INT_MAX - 1 && pm == -1)
-		return (0);
-	if (sum > INT_MAX && pm == 1)
+	if ((sum > INT_MAX - 1 && pm == -1) || (sum > INT_MAX && pm == 1))
 		return (0);
 	return (1);
 }

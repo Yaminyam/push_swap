@@ -6,36 +6,45 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:25 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 17:44:43 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/11 10:40:30 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int	is_sorted(t_stack *stack)
+{
+	t_node	*node;
+
+	node = stack->top;
+	while (node->next)
+	{
+		if (node->content > node->next->content)
+		{
+			return (0);
+		}
+		node = node->next;
+	}
+	return (1);
+}
+
 static void	push_swap(t_stack *stack_a, t_stack *stack_b, int size)
 {
-	int	max_num;
-	int	max_bits;
 	int	i;
 	int	j;
 	int	num;
 
-	max_num = size - 1;
-	max_bits = 0;
-	while ((max_num >> max_bits) != 0)
-		++max_bits;
 	i = 0;
-	while (i < max_bits)
+	while (!is_sorted(stack_a))
 	{
 		j = 0;
-		while (j < size)
+		while (j++ < size)
 		{
 			num = stack_a->top->content;
 			if (((num >> i) & 1) == 1)
 				cmd(stack_a, stack_b, "ra");
 			else
 				cmd(stack_a, stack_b, "pb");
-			j++;
 		}
 		while (stack_b->size)
 			cmd(stack_a, stack_b, "pa");
