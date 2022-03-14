@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:25 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/14 16:50:27 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/14 17:56:47 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ static void	push_swap(t_stack *stack_a, t_stack *stack_b, int size)
 	}
 }
 
+
 static void	small3_push_swap(t_stack *stack_a, t_stack *stack_b)
 {
 	int	arr[3];
@@ -72,7 +73,7 @@ static void	small3_push_swap(t_stack *stack_a, t_stack *stack_b)
 	}
 	else if (arr[0] < arr[2] && arr[2] < arr[1])
 	{
-		cmd(stack_a, stack_b, "pb");
+		cmd(stack_a, stack_b, "rra");
 		cmd(stack_a, stack_b, "sa");
 	}
 }
