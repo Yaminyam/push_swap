@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:14:49 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 16:03:23 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/14 14:35:28 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,13 @@ void	ft_push(t_stack *lst, t_stack *lst2)
 	node = lst->top;
 	tmp = node->next;
 	node->next = lst2->top;
+	if (lst2->top)
+		lst2->top->prev = node;
 	lst2->top = node;
 	if (tmp)
 		tmp->prev = NULL;
+	if (!(lst2->bottom))
+		lst2->bottom = node;
 	lst->top = tmp;
 	lst->size--;
 	lst2->size++;

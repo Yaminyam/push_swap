@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:25 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/14 11:44:29 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/14 15:31:07 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,27 +54,28 @@ static void	push_swap(t_stack *stack_a, t_stack *stack_b, int size)
 
 /*static void small_push_swap(t_stack *stack_a, t_stack *stack_b, int size)
 {
-	int	i;
-	int	j;
-	int	num;
+	int	arr[3];
 
-	i = 0;
-	if (!is_sorted(stack_a))
-		return ;
+	arr[0] = stack_a->top->content;
+	arr[1] = stack_a->top->next->content;
+	arr[2] = stack_a->top->next->next->content;
+	if (arr[1] < arr[0] && arr[0] < arr[2])
+		cmd(stack_a, stack_b, "sa");
+	else if (arr[1] < arr[2] && arr[2] < arr[0])
+		cmd(stack_a, stack_b, "ra");
+	else if (arr[2] < arr[0] && arr[0] < arr[1])
+		cmd(stack_a, stack_b, "rra");
+	else if (arr[2] < arr[1] && arr[1] < arr[0])
 	{
-		j = 0;
-		while (j++ < size)
-		{
-			num = stack_a->top->content;
-			if (((num >> i) & 1) == 1)
-				cmd(stack_a, stack_b, "ra");
-			else
-				cmd(stack_a, stack_b, "pb");
-		}
-		while (stack_b->size)
-			cmd(stack_a, stack_b, "pa");
-		i++;
+		cmd(stack_a, stack_b, "sa");
+		cmd(stack_a, stack_b, "rra");
 	}
+	else if (arr[0] < arr[2] && arr[2] < arr[1])
+	{
+		cmd(stack_a, stack_b, "pb");
+		cmd(stack_a, stack_b, "sa");
+	}
+	return (1);
 }*/
 
 int	main(int argc, char **argv)
