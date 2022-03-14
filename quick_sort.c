@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:45:17 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 17:43:07 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/14 11:43:41 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	quick_sort(int arr[], int left, int right)
 			r--;
 		if (l <= r)
 		{
-			swap(&arr[l], &arr[r]);
+			if (l != r)
+				swap(&arr[l], &arr[r]);
 			l++;
 			r--;
 		}

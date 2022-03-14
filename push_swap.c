@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:25 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/11 10:40:30 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/14 11:44:29 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	push_swap(t_stack *stack_a, t_stack *stack_b, int size)
 		while (j++ < size)
 		{
 			num = stack_a->top->content;
-			if (((num >> i) & 1) == 1)
+			if ((num >> i) & 1)
 				cmd(stack_a, stack_b, "ra");
 			else
 				cmd(stack_a, stack_b, "pb");
@@ -51,6 +51,31 @@ static void	push_swap(t_stack *stack_a, t_stack *stack_b, int size)
 		i++;
 	}
 }
+
+/*static void small_push_swap(t_stack *stack_a, t_stack *stack_b, int size)
+{
+	int	i;
+	int	j;
+	int	num;
+
+	i = 0;
+	if (!is_sorted(stack_a))
+		return ;
+	{
+		j = 0;
+		while (j++ < size)
+		{
+			num = stack_a->top->content;
+			if (((num >> i) & 1) == 1)
+				cmd(stack_a, stack_b, "ra");
+			else
+				cmd(stack_a, stack_b, "pb");
+		}
+		while (stack_b->size)
+			cmd(stack_a, stack_b, "pa");
+		i++;
+	}
+}*/
 
 int	main(int argc, char **argv)
 {
