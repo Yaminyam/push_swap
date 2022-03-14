@@ -6,7 +6,7 @@
 /*   By: sikang <sikang@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:31:50 by sikang            #+#    #+#             */
-/*   Updated: 2022/03/10 17:45:31 by sikang           ###   ########.fr       */
+/*   Updated: 2022/03/14 16:43:38 by sikang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_push(t_stack *lst, t_stack *lst2);
 void	ft_rev_rotate(t_stack *lst);
 void	quick_sort(int arr[], int left, int right);
 void	rescale(t_stack *stack, int *input, int n);
-void	init_stack(t_stack *stack_a, char **argv, int *input);
+void	init_stack(t_stack *stack_a, t_stack *stack_b, char **argv, int *input);
 void	cmd(t_stack *stack_a, t_stack *stack_b, char *cmd);
 void	cmd_d(t_stack *stack_a, t_stack *stack_b, char *cmd);
 
